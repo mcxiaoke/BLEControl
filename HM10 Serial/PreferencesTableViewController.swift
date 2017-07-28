@@ -85,10 +85,6 @@ final class PreferencesTableViewController: UITableViewController {
     
     
 //MARK: IBActions
-
-    @IBAction func getProVersion(_ sender: Any) {
-        UIApplication.shared.openURL(URL(string: "itms-apps://itunes.apple.com/app/id1221924372")!)
-    }
     
     @IBAction func done(_ sender: AnyObject) {
         // dismissssssss

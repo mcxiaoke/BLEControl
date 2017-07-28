@@ -50,7 +50,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         
         // start scanning and schedule the time out
         serial.startScan()
-        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,6 +129,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
 //MARK: BluetoothSerialDelegate
     
     func serialDidDiscoverPeripheral(_ peripheral: CBPeripheral, RSSI: NSNumber?) {
+        print("serialDidDiscoverPeripheral: \(peripheral) \(RSSI)")
         // check whether it is a duplicate
         for exisiting in peripherals {
             if exisiting.peripheral.identifier == peripheral.identifier { return }
@@ -142,6 +143,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func serialDidFailToConnect(_ peripheral: CBPeripheral, error: NSError?) {
+        print("serialDidFailToConnect: \(peripheral) \(error)")
         if let hud = progressHUD {
             hud.hide(false)
         }
@@ -155,6 +157,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
+        print("serialDidDisconnect: \(peripheral) \(error)")
         if let hud = progressHUD {
             hud.hide(false)
         }
@@ -169,6 +172,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func serialIsReady(_ peripheral: CBPeripheral) {
+        print("serialIsReady: \(peripheral)")
         if let hud = progressHUD {
             hud.hide(false)
         }
@@ -178,6 +182,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func serialDidChangeState() {
+        print("serialDidChangeState:")
         if let hud = progressHUD {
             hud.hide(false)
         }
