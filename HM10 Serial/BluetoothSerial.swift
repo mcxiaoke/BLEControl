@@ -10,6 +10,11 @@
 import UIKit
 import CoreBluetooth
 
+// Remote Device and Service: 
+// <CBPeripheral: 0x1700f1300, identifier = 37CA0C86-969A-4225-A781-A9D1DC9AECD6, name = Car-CC2541, state = connected>
+// <CBService: 0x170271a00, isPrimary = YES, UUID = FFE0>
+// <CBCharacteristic: 0x1740a5be0, UUID = FFE1, properties = 0x1E, value = (null), notifying = NO>
+
 /// Global serial handler, don't forget to initialize it with init(delgate:)
 var serial: BluetoothSerial!
 
