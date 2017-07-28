@@ -190,6 +190,14 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
     
     
 //MARK: IBActions
+    
+    @IBAction func padButtonPressed(_ sender: UIView){
+        if serial.connectedPeripheral == nil {
+            performSegue(withIdentifier: "ShowScanner", sender: self)
+        } else {
+            serial.sendMessageToDevice("\(sender.tag)")
+        }
+    }
 
     @IBAction func barButtonPressed(_ sender: AnyObject) {
         if serial.connectedPeripheral == nil {

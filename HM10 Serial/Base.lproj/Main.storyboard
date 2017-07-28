@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dxf-N9-FmM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dxf-N9-FmM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AbS-y9-kPq" id="a63-I2-Hjv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an4-6b-FSY">
@@ -105,73 +104,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="607-Qc-oT6" customClass="GradientView" customModule="Serial" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Features?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX5-RH-WGZ">
-                                    <rect key="frame" x="8" y="12" width="359" height="27"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="27" id="xr3-PK-Dwi"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProIconSmall" translatesAutoresizingMaskIntoConstraints="NO" id="Ofy-8D-DPj">
-                                    <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="Ofy-8D-DPj" secondAttribute="height" multiplier="1:1" id="QNS-ie-p7I"/>
-                                    </constraints>
-                                </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enB-TQ-sXy">
-                                    <rect key="frame" x="107.5" y="43" width="160" height="22"/>
-                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.17168328220858894" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="160" id="AAf-Vv-25D"/>
-                                        <constraint firstAttribute="height" constant="22" id="tVo-Op-rc4"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" title="Get the Pro version"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="4"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="getProVersion:" destination="bWD-6R-mwZ" eventType="touchUpInside" id="9Q4-H4-OBL"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" red="0.1764705926" green="0.49803921579999999" blue="0.75686275960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstItem="enB-TQ-sXy" firstAttribute="centerX" secondItem="AX5-RH-WGZ" secondAttribute="centerX" id="9ju-ZL-LF5"/>
-                                <constraint firstItem="enB-TQ-sXy" firstAttribute="top" secondItem="AX5-RH-WGZ" secondAttribute="bottom" constant="4" id="Wq7-bo-htD"/>
-                                <constraint firstItem="AX5-RH-WGZ" firstAttribute="top" secondItem="607-Qc-oT6" secondAttribute="top" constant="12" id="asI-Vg-cw8"/>
-                                <constraint firstItem="Ofy-8D-DPj" firstAttribute="height" secondItem="607-Qc-oT6" secondAttribute="height" id="bLq-hG-SC1"/>
-                                <constraint firstItem="AX5-RH-WGZ" firstAttribute="centerX" secondItem="607-Qc-oT6" secondAttribute="centerX" id="eVw-aU-RLn"/>
-                                <constraint firstItem="Ofy-8D-DPj" firstAttribute="leading" secondItem="607-Qc-oT6" secondAttribute="leading" id="mnx-YM-4cb"/>
-                                <constraint firstAttribute="trailing" secondItem="AX5-RH-WGZ" secondAttribute="trailing" constant="8" id="pyg-I3-pAn"/>
-                                <constraint firstItem="Ofy-8D-DPj" firstAttribute="centerY" secondItem="607-Qc-oT6" secondAttribute="centerY" id="xdn-rK-QGP"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                    <color key="value" red="0.0" green="0.28627450980392155" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                    <color key="value" red="0.031372549019607843" green="0.15294117647058825" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
                         <sections>
                             <tableViewSection headerTitle="Append to message" id="EvA-aK-9Aw">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Wh3-Ek-vmN" style="IBUITableViewCellStyleDefault" id="Pfg-Vv-q69">
-                                        <rect key="frame" x="0.0" y="133" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pfg-Vv-q69" id="0gp-Zc-6el">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="No line ending" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wh3-Ek-vmN">
@@ -185,10 +125,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Asz-6c-KVE" style="IBUITableViewCellStyleDefault" id="Ib8-c0-6i1">
-                                        <rect key="frame" x="0.0" y="177" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ib8-c0-6i1" id="5dg-j9-7vf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Newline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Asz-6c-KVE">
@@ -202,10 +142,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="fak-TI-Mc4" style="IBUITableViewCellStyleDefault" id="lOY-VM-w1z">
-                                        <rect key="frame" x="0.0" y="221" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lOY-VM-w1z" id="h15-dV-dGT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Carriage return" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fak-TI-Mc4">
@@ -219,10 +159,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="UTN-XI-cNk" style="IBUITableViewCellStyleDefault" id="bBU-L2-d60">
-                                        <rect key="frame" x="0.0" y="265" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bBU-L2-d60" id="n4P-73-liS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Both NL &amp; CR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UTN-XI-cNk">
@@ -240,10 +180,10 @@
                             <tableViewSection headerTitle="Append to received message" id="tQ6-0d-h01">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="HWl-Dz-Ole" style="IBUITableViewCellStyleDefault" id="7u0-wP-IfR">
-                                        <rect key="frame" x="0.0" y="357" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="279.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7u0-wP-IfR" id="OYi-ZD-431">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Nothing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HWl-Dz-Ole">
@@ -257,10 +197,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Cvj-jL-jd1" style="IBUITableViewCellStyleDefault" id="YEI-EV-9hF">
-                                        <rect key="frame" x="0.0" y="401" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="323.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEI-EV-9hF" id="cjn-uy-NSt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Newline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cvj-jL-jd1">
@@ -293,7 +233,7 @@
             </objects>
             <point key="canvasLocation" x="2808.8000000000002" y="1386.656671664168"/>
         </scene>
-        <!--Bluetooth Serial-->
+        <!--BLE Control-->
         <scene sceneID="fbM-Ih-5Rw">
             <objects>
                 <viewController id="EEx-bJ-XFj" customClass="SerialViewController" customModule="Serial" customModuleProvider="target" sceneMemberID="viewController">
@@ -309,9 +249,131 @@
                                 <rect key="frame" x="12" y="0.0" width="351" height="611"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5U5-vJ-C5s">
+                                <rect key="frame" x="16" y="72" width="343" height="531"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nlB-0q-LXr">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="133"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNG-mk-Fp9">
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="133"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="A"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="Dvr-TS-mg1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1t-ew-TBI">
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="133"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="B"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="1ca-6i-vs0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-fg-jWD">
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="133"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="cjI-Uo-Y3r"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zll-A9-61S">
+                                        <rect key="frame" x="0.0" y="133" width="343" height="132.5"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5L-M6-NKH">
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="132.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="edc-b9-grH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmX-dK-1eh">
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="132.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="UxJ-uI-76A"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoq-n3-4cl">
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="132.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="tT3-mF-Kws"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-K0-DNz">
+                                        <rect key="frame" x="0.0" y="265.5" width="343" height="133"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdx-n1-qaa">
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="133"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="kPB-D2-pfE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWv-2w-spq">
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="133"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="O5w-bR-qDq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBh-No-JtS">
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="133"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="6"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="McV-Y4-c5Q"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IiN-9u-MjO">
+                                        <rect key="frame" x="0.0" y="398.5" width="343" height="132.5"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ab1-K3-MRU">
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="132.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="7"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="Y1J-Mh-pYh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oU-nh-SPD">
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="132.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="8"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="Ihy-r7-38R"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofG-xS-0O0">
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="132.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="9"/>
+                                                <connections>
+                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="qID-68-qP9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bc-q6-XAi">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
@@ -341,12 +403,16 @@
                             <constraint firstAttribute="centerX" secondItem="uKa-Ue-hGn" secondAttribute="centerX" id="Z9Y-Vq-sEm"/>
                             <constraint firstItem="5bc-q6-XAi" firstAttribute="width" secondItem="fvc-it-Qiq" secondAttribute="width" id="fmO-pW-skd"/>
                             <constraint firstItem="JDL-SJ-Cln" firstAttribute="top" secondItem="5bc-q6-XAi" secondAttribute="bottom" id="hMY-tP-mlG"/>
+                            <constraint firstItem="5U5-vJ-C5s" firstAttribute="top" secondItem="8L2-oJ-fyr" secondAttribute="bottom" constant="8" symbolic="YES" id="hcb-cD-5Rd"/>
+                            <constraint firstItem="5bc-q6-XAi" firstAttribute="top" secondItem="5U5-vJ-C5s" secondAttribute="bottom" constant="20" id="kG1-aP-T38"/>
                             <constraint firstItem="5bc-q6-XAi" firstAttribute="centerX" secondItem="fvc-it-Qiq" secondAttribute="centerX" id="lrD-zJ-tij"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5U5-vJ-C5s" secondAttribute="trailing" id="p7Z-6d-JdJ"/>
                             <constraint firstItem="uKa-Ue-hGn" firstAttribute="leading" secondItem="fvc-it-Qiq" secondAttribute="leadingMargin" constant="-4" id="png-fP-Md8"/>
+                            <constraint firstItem="5U5-vJ-C5s" firstAttribute="leading" secondItem="fvc-it-Qiq" secondAttribute="leadingMargin" id="sIJ-gS-7ta"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Bluetooth Serial" id="bYe-jD-tRw">
-                        <barButtonItem key="leftBarButtonItem" title="Connect" id="ab2-hX-zmf">
+                    <navigationItem key="navigationItem" title="BLE Control" id="bYe-jD-tRw">
+                        <barButtonItem key="leftBarButtonItem" title="Scan" id="ab2-hX-zmf">
                             <connections>
                                 <action selector="barButtonPressed:" destination="EEx-bJ-XFj" id="gtQ-Es-7yR"/>
                             </connections>
@@ -427,7 +493,4 @@
             <point key="canvasLocation" x="511" y="1387"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ProIconSmall" width="77" height="77"/>
-    </resources>
 </document>
