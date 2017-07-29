@@ -22,25 +22,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Plv-MK-Pj9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Plv-MK-Pj9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="AbS-y9-kPq">
-                                        <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="80" id="AbS-y9-kPq">
+                                        <rect key="frame" x="0.0" y="22" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AbS-y9-kPq" id="a63-I2-Hjv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an4-6b-FSY">
-                                                    <rect key="frame" x="15" y="0.0" width="220" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="220" height="79.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1az-je-hXQ">
-                                                    <rect key="frame" x="243" y="0.0" width="124" height="43"/>
+                                                    <rect key="frame" x="243" y="0.0" width="124" height="79.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="124" id="L1k-bd-jn1"/>
                                                     </constraints>
@@ -253,119 +253,155 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5U5-vJ-C5s">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5U5-vJ-C5s">
                                 <rect key="frame" x="16" y="72" width="343" height="531"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nlB-0q-LXr">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="133"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nlB-0q-LXr">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="118"/>
                                         <subviews>
-                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNG-mk-Fp9">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="133"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="A"/>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNG-mk-Fp9" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="118"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="A">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="Dvr-TS-mg1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1t-ew-TBI">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="133"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="B"/>
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1t-ew-TBI" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="121" y="0.0" width="101" height="118"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="B">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="1ca-6i-vs0"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-fg-jWD">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="133"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-fg-jWD" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="242" y="0.0" width="101" height="118"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="cjI-Uo-Y3r"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zll-A9-61S">
-                                        <rect key="frame" x="0.0" y="133" width="343" height="132.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zll-A9-61S">
+                                        <rect key="frame" x="0.0" y="138" width="343" height="117.5"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5L-M6-NKH">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="132.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="1"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5L-M6-NKH" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="117.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="edc-b9-grH"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmX-dK-1eh">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="132.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="2"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmX-dK-1eh" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="121" y="0.0" width="101" height="117.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="UxJ-uI-76A"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoq-n3-4cl">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="132.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="3"/>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoq-n3-4cl" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="242" y="0.0" width="101" height="117.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="tT3-mF-Kws"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-K0-DNz">
-                                        <rect key="frame" x="0.0" y="265.5" width="343" height="133"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-K0-DNz">
+                                        <rect key="frame" x="0.0" y="275.5" width="343" height="118"/>
                                         <subviews>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdx-n1-qaa">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="133"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="4"/>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdx-n1-qaa" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="118"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="kPB-D2-pfE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWv-2w-spq">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="133"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="5"/>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWv-2w-spq" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="121" y="0.0" width="101" height="118"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="O5w-bR-qDq"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBh-No-JtS">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="133"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="6"/>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBh-No-JtS" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="242" y="0.0" width="101" height="118"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="McV-Y4-c5Q"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IiN-9u-MjO">
-                                        <rect key="frame" x="0.0" y="398.5" width="343" height="132.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IiN-9u-MjO">
+                                        <rect key="frame" x="0.0" y="413.5" width="343" height="117.5"/>
                                         <subviews>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ab1-K3-MRU">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="132.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="7"/>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ab1-K3-MRU" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="117.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="Y1J-Mh-pYh"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oU-nh-SPD">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="132.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="8"/>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oU-nh-SPD" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="121" y="0.0" width="101" height="117.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="Ihy-r7-38R"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofG-xS-0O0">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="132.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                <state key="normal" title="9"/>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofG-xS-0O0" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
+                                                <rect key="frame" x="242" y="0.0" width="101" height="117.5"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="qID-68-qP9"/>
                                                 </connections>
@@ -431,6 +467,7 @@
                         <outlet property="mainTextView" destination="uKa-Ue-hGn" id="zAW-om-CfC"/>
                         <outlet property="messageField" destination="NKM-rO-OFm" id="cj7-qb-Sm3"/>
                         <outlet property="navItem" destination="bYe-jD-tRw" id="yFM-d6-qdH"/>
+                        <outlet property="stackView" destination="5U5-vJ-C5s" id="SBG-Np-ax1"/>
                         <segue destination="HTb-Lt-944" kind="presentation" identifier="ShowScanner" modalPresentationStyle="formSheet" id="MXp-F6-2KD"/>
                     </connections>
                 </viewController>

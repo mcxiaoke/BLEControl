@@ -70,6 +70,7 @@ extension BluetoothSerialDelegate {
 
 final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
+    let carUUID = CBUUID(string:"37CA0C86-969A-4225-A781-A9D1DC9AECD6")
     // MARK: Variables
     
     /// The delegate object the BluetoothDelegate methods will be called upon

@@ -34,6 +34,7 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint! // used to move the textField up when the keyboard is present
     @IBOutlet weak var barButton: UIBarButtonItem!
     @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var stackView:UIStackView!
 
 
 //MARK: Functions
@@ -65,6 +66,22 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         bottomView.layer.shadowRadius = 0
         bottomView.layer.shadowOpacity = 0.5
         bottomView.layer.shadowColor = UIColor.gray.cgColor
+        
+//        setupButtons()
+    }
+    
+    func setupButtons(){
+        stackView.subviews.forEach { (view) in
+            if let b = view as? UIButton{
+                b.layer.cornerRadius = 20
+            }else{
+                view.subviews.forEach({ (view2) in
+                    if view2 is UIButton{
+                        view2.layer.cornerRadius = 20
+                    }
+                })
+            }
+        }
     }
 
     deinit {
@@ -103,12 +120,12 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
             barButton.tintColor = UIColor.red
             barButton.isEnabled = true
         } else if serial.centralManager.state == .poweredOn {
-            navItem.title = "Bluetooth Serial"
+            navItem.title = "BLE Control"
             barButton.title = "Connect"
             barButton.tintColor = view.tintColor
             barButton.isEnabled = true
         } else {
-            navItem.title = "Bluetooth Serial"
+            navItem.title = "BLE Control"
             barButton.title = "Connect"
             barButton.tintColor = view.tintColor
             barButton.isEnabled = false

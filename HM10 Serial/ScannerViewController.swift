@@ -134,6 +134,10 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         for exisiting in peripherals {
             if exisiting.peripheral.identifier == peripheral.identifier { return }
         }
+        guard let name = peripheral.name else { return }
+        if !(name.contains("Car")) {
+            return
+        }
         
         // add to the array, next sort & reload
         let theRSSI = RSSI?.floatValue ?? 0.0
