@@ -34,13 +34,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an4-6b-FSY">
-                                                    <rect key="frame" x="15" y="0.0" width="512" height="79.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="220" height="79.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1az-je-hXQ">
-                                                    <rect key="frame" x="535" y="0.0" width="124" height="79.5"/>
+                                                    <rect key="frame" x="243" y="0.0" width="124" height="79.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="124" id="L1k-bd-jn1"/>
                                                     </constraints>
@@ -440,7 +440,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ovv-1F-4EP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eEz-hC-X96">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eEz-hC-X96">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -458,7 +458,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HTb-Lt-944" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EFM-C7-8Ti">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EFM-C7-8Ti">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -471,13 +471,13 @@
             </objects>
             <point key="canvasLocation" x="1240" y="652"/>
         </scene>
-        <!--Control-->
+        <!--KeyPad-->
         <scene sceneID="xTU-WO-1J0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dxf-N9-FmM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Control" id="gnd-aV-auk"/>
+                    <tabBarItem key="tabBarItem" title="KeyPad" image="TabIconKeyPad" id="gnd-aV-auk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eTt-U0-Rqg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eTt-U0-Rqg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -570,6 +570,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wHB-Xw-YD8" customClass="TabBarController" customModule="Serial" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xEw-21-sGc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -586,9 +587,9 @@
         <scene sceneID="dbW-j5-Bxv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bGk-1o-2Ok" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Message" id="w7g-Qe-tH2"/>
+                    <tabBarItem key="tabBarItem" title="Message" image="TabIconMessage" id="w7g-Qe-tH2"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qih-dn-ZaP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qih-dn-ZaP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -602,6 +603,10 @@
             <point key="canvasLocation" x="2388" y="2096"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TabIconKeyPad" width="25" height="25"/>
+        <image name="TabIconMessage" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Q6w-1y-Jy2"/>
     </inferredMetricsTieBreakers>

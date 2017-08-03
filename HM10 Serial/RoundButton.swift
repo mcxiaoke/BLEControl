@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Iconic
 
 extension UIButton {
     func setBackgroundColor(color: UIColor, forState: UIControlState) {
