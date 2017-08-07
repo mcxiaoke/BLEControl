@@ -26,21 +26,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="80" id="AbS-y9-kPq">
-                                        <rect key="frame" x="0.0" y="22" width="375" height="80"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="60" id="AbS-y9-kPq">
+                                        <rect key="frame" x="0.0" y="22" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AbS-y9-kPq" id="a63-I2-Hjv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an4-6b-FSY">
-                                                    <rect key="frame" x="15" y="0.0" width="220" height="79.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="220" height="59.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1az-je-hXQ">
-                                                    <rect key="frame" x="243" y="0.0" width="124" height="79.5"/>
+                                                    <rect key="frame" x="243" y="0.0" width="124" height="59.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="124" id="L1k-bd-jn1"/>
                                                     </constraints>
@@ -534,7 +534,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ovv-1F-4EP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eEz-hC-X96">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eEz-hC-X96">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -552,7 +552,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HTb-Lt-944" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EFM-C7-8Ti">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EFM-C7-8Ti">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -571,7 +571,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dxf-N9-FmM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="KeyPad" image="TabIconKeyPad" id="gnd-aV-auk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eTt-U0-Rqg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eTt-U0-Rqg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -596,12 +596,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvN-pu-wrl">
-                                <rect key="frame" x="16" y="72" width="343" height="492"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s2j-o5-vm4">
+                                <rect key="frame" x="16" y="64" width="343" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" textLabel="HxO-eW-drp" detailTextLabel="ODm-y9-nlo" style="IBUITableViewCellStyleSubtitle" id="CDT-as-l5d">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CDT-as-l5d" id="Zew-oJ-etL">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" tag="1" contentMode="left" text="remote message text." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HxO-eW-drp">
+                                                    <rect key="frame" x="15" y="5" width="166" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" tag="2" contentMode="left" text="remote message hex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ODm-y9-nlo">
+                                                    <rect key="frame" x="15" y="25.5" width="117.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Kbc-Lb-O1T" id="3ZH-1n-K4s"/>
+                                    <outlet property="delegate" destination="Kbc-Lb-O1T" id="BEe-oD-NIj"/>
+                                </connections>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3e-cp-VIa">
                                 <rect key="frame" x="16" y="574" width="343" height="44"/>
                                 <subviews>
@@ -623,11 +651,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="W3e-cp-VIa" secondAttribute="trailing" id="1d8-Ax-Y8M"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SvN-pu-wrl" secondAttribute="trailing" id="2JE-MF-HRX"/>
-                            <constraint firstItem="SvN-pu-wrl" firstAttribute="top" secondItem="Q6i-5I-uhj" secondAttribute="bottom" constant="8" symbolic="YES" id="M23-tc-f8H"/>
-                            <constraint firstItem="W3e-cp-VIa" firstAttribute="top" secondItem="SvN-pu-wrl" secondAttribute="bottom" constant="10" id="WBw-PJ-fM7"/>
-                            <constraint firstItem="SvN-pu-wrl" firstAttribute="leading" secondItem="HQZ-ty-qaT" secondAttribute="leadingMargin" id="X2g-VI-vZO"/>
+                            <constraint firstItem="W3e-cp-VIa" firstAttribute="top" secondItem="s2j-o5-vm4" secondAttribute="bottom" constant="10" id="IMH-Bs-Kca"/>
+                            <constraint firstItem="s2j-o5-vm4" firstAttribute="top" secondItem="Q6i-5I-uhj" secondAttribute="bottom" id="IgG-rj-kVC"/>
                             <constraint firstItem="1vZ-bn-rZ4" firstAttribute="top" secondItem="W3e-cp-VIa" secondAttribute="bottom" id="tay-HP-nqX"/>
+                            <constraint firstItem="s2j-o5-vm4" firstAttribute="leading" secondItem="HQZ-ty-qaT" secondAttribute="leadingMargin" id="vbk-k8-gaa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s2j-o5-vm4" secondAttribute="trailing" id="vda-VB-eyE"/>
                             <constraint firstItem="W3e-cp-VIa" firstAttribute="leading" secondItem="HQZ-ty-qaT" secondAttribute="leadingMargin" id="zhC-9s-PwS"/>
                         </constraints>
                     </view>
@@ -647,9 +675,9 @@
                     <connections>
                         <outlet property="barButton" destination="iYd-q1-Y4Z" id="oj5-LR-nbE"/>
                         <outlet property="bottomView" destination="W3e-cp-VIa" id="RGh-J1-Qma"/>
-                        <outlet property="mainTextView" destination="SvN-pu-wrl" id="Egg-NC-Nuf"/>
                         <outlet property="messageField" destination="G1Y-Pa-hrx" id="S3a-8S-ORm"/>
                         <outlet property="navItem" destination="UPZ-cL-suK" id="Xm1-FA-CNG"/>
+                        <outlet property="tableView" destination="s2j-o5-vm4" id="agp-xE-RYl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYf-ls-X3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -681,7 +709,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bGk-1o-2Ok" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Message" image="TabIconMessage" id="w7g-Qe-tH2"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qih-dn-ZaP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qih-dn-ZaP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -700,7 +728,7 @@
         <image name="TabIconMessage" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MXp-F6-2KD"/>
-        <segue reference="Q6w-1y-Jy2"/>
+        <segue reference="d9L-CK-dOj"/>
+        <segue reference="DCR-Cc-yOs"/>
     </inferredMetricsTieBreakers>
 </document>

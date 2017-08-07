@@ -9,7 +9,9 @@
 import UIKit
 
 let BluetoothDidSendStringMessageKey = "BluetoothDidSendStringMessageKey"
-let BluetoothDidReceiveStringMessagekey = "BluetoothDidReceiveStringMessagekey"
+let BluetoothDidReceiveStringMessageKey = "BluetoothDidReceiveStringMessagekey"
+let BluetoothDidSendDataMessageKey = "BluetoothDidSendDataMessageKey"
+let BluetoothDidReceiveDataMessageKey = "BluetoothDidReceiveDataMessagekey"
 
 
 let MessageOptionKey = "MessageOption"
@@ -39,9 +41,11 @@ enum HoldSendDelayOption: Int {
 }
 
 extension Notification.Name{
-    static let BluetoothDidStateChange = Notification.Name("EventBluetoothDidStateChange")
-    static let BluetoothDidSendString = Notification.Name("kEventBluetoothDidSendString")
-    static let BluetoothDidReceiveString = Notification.Name("EventBluetoothDidReceiveString")
+    static let BluetoothDidStateChange = Notification.Name("BluetoothDidStateChange")
+    static let BluetoothDidSendString = Notification.Name("BluetoothDidSendString")
+    static let BluetoothDidReceiveString = Notification.Name("BluetoothDidReceiveString")
+    static let BluetoothDidSendData = Notification.Name("BluetoothDidSendData")
+    static let BluetoothDidReceiveData = Notification.Name("BluetoothDidReceiveData")
 }
 
 

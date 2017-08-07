@@ -10,14 +10,28 @@ import UIKit
 import QuartzCore
 import CoreBluetooth
 
+class MessageItem: AnyObject {
+    let raw:Data
+    let text:String
+    let hex:String
+    
+    init(_ data:Data) {
+        raw = data
+        text = data.utf8String()
+        hex = data.hexString()
+    }
+}
+
 final class MessageViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var barButton: UIBarButtonItem!
     @IBOutlet weak var navItem: UINavigationItem!
     
-    @IBOutlet weak var mainTextView: UITextView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var bottomView: UIView!
+    
+    var messages: [MessageItem] = []
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -27,18 +41,21 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         print("MessageViewController.viewDidLoad")
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.tableHeaderView = UIView(frame: CGRect.zero)
+        
         reloadView()
         
-        mainTextView.layoutManager.allowsNonContiguousLayout = true
-        mainTextView.text = ""
         messageField.delegate = self
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadView), name: .BluetoothDidStateChange, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onMessageSent(noti:)), name: .BluetoothDidSendString, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onMessageSent(noti:)), name: .BluetoothDidSendData, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onMessageReceived(noti:)), name: .BluetoothDidReceiveString, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onMessageReceived(noti:)), name: .BluetoothDidReceiveData, object: nil)
         
         // to dismiss the keyboard if the user taps outside the textField while editing
         let tap = UITapGestureRecognizer(target: self, action: #selector(MessageViewController.dismissKeyboard))
@@ -73,9 +90,12 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
-    func textViewScrollToBottom() {
-        let range = NSMakeRange(NSString(string: mainTextView.text).length - 1, 1)
-        mainTextView.scrollRangeToVisible(range)
+    func scrollToBottom() {
+        let lastItem = IndexPath(item: messages.count - 1, section: 0)
+        tableView.scrollToRow(at: lastItem, at: .bottom, animated: true)
+        
+//        let scrollPoint = CGPoint(x: 0, y: self.tableView.contentSize.height - self.tableView.frame.size.height)
+//        self.tableView.setContentOffset(scrollPoint, animated: true)
     }
     
     //MARK: UITextFieldDelegate
@@ -105,30 +125,27 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
         }
         
         // send the message and clear the textfield
+        handleMessage(msg.data(using: String.Encoding.utf8)!)
         serial.sendMessageToDevice(msg)
         messageField.text = ""
         return true
     }
     
-    func handleMessage(message:String){
-        // add the received text to the textView, optionally with a line break at the end
-        var newText = mainTextView.text!
-        newText += message
-        let pref = UserDefaults.standard.integer(forKey: ReceivedMessageOptionKey)
-        if pref == ReceivedMessageOption.newline.rawValue { newText += "\n" }
-        mainTextView.text = newText
-        textViewScrollToBottom()
+    func handleMessage(_ data:Data){
+        messages.append(MessageItem(data))
+        tableView.reloadData()
+        scrollToBottom()
     }
     
     func onMessageSent(noti:Notification){
-        if let message = noti.userInfo?[BluetoothDidSendStringMessageKey] as? String{
-            handleMessage(message: message)
+        if let data = noti.userInfo?[BluetoothDidSendDataMessageKey] as? Data{
+            handleMessage(data)
         }
     }
     
     func onMessageReceived(noti:Notification){
-        if let message = noti.userInfo?[BluetoothDidReceiveStringMessagekey] as? String{
-            handleMessage(message: message)
+        if let data = noti.userInfo?[BluetoothDidReceiveDataMessageKey] as? Data{
+            handleMessage(data)
         }
     }
     
@@ -149,4 +166,32 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
+}
+
+extension MessageViewController: UITableViewDelegate {
+
+}
+
+extension MessageViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell")!
+        let textString = cell.viewWithTag(1) as! UILabel
+        let textHex = cell.viewWithTag(2) as! UILabel
+        let item = messages[indexPath.row]
+        textString.text = item.text
+        textHex.text = item.hex
+        return cell
+    }
+    
+    
+
 }

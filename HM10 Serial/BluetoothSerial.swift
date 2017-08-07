@@ -355,11 +355,14 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
         
         // first the data
         delegate.serialDidReceiveData(data!)
+        let userInfo = [BluetoothDidReceiveDataMessageKey : data!]
+        NotificationCenter.default.post(name: .BluetoothDidReceiveData,
+                                        object: self, userInfo: userInfo)
         
         // then the string
         if let str = String(data: data!, encoding: String.Encoding.utf8) {
             delegate.serialDidReceiveString(str)
-            let userInfo = [BluetoothDidReceiveStringMessagekey : str]
+            let userInfo = [BluetoothDidReceiveStringMessageKey : str]
             NotificationCenter.default.post(name: .BluetoothDidReceiveString,
                                             object: self, userInfo: userInfo)
         } else {
@@ -381,6 +384,9 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
         
         // first the data
         delegate.serialDidSendData(data!)
+        let userInfo = [BluetoothDidSendDataMessageKey : data!]
+        NotificationCenter.default.post(name: .BluetoothDidSendData,
+                                        object: self, userInfo: userInfo)
         
         // then the string
         if let str = String(data: data!, encoding: String.Encoding.utf8) {

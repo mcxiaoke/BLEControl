@@ -7,4 +7,12 @@
 //
 
 
-
+extension Data {
+    func hexString() -> String {
+        return map { String(format: "%02hhx ", $0) }.joined()
+    }
+    
+    func utf8String() -> String {
+        return String(data: self, encoding: String.Encoding.utf8)!
+    }
+}
