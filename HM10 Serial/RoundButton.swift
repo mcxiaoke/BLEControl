@@ -32,8 +32,8 @@ class RoundButton: UIButton {
     }
     
     func setup(){
-        alpha = 0.8
-        layer.cornerRadius = frame.height/4
+        //alpha = 0.8
+        layer.cornerRadius = frame.height/6
     }
     
     override var isHighlighted: Bool {

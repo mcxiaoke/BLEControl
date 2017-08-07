@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreBluetooth
+import AudioToolbox
 
 final class TabBarController: UITabBarController, BluetoothSerialDelegate {
 
@@ -37,8 +38,14 @@ final class TabBarController: UITabBarController, BluetoothSerialDelegate {
         print("Tab.serialDidReceiveString")
     }
     
+    func serialIsReady(_ peripheral: CBPeripheral) {
+        print("Tab.serialIsReady")
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+    }
+    
     func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
         print("Tab.serialDidDisconnect")
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         //reloadView()
         //dismissKeyboard()
         let hud = MBProgressHUD.showAdded(to: view, animated: true)

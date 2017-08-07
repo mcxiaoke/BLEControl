@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreBluetooth
+import AudioToolbox
 
 
 final class KeyPadViewController: UIViewController {
@@ -97,8 +98,10 @@ final class KeyPadViewController: UIViewController {
         } else {
             let tag = sender.tag
             timer = SwiftTimer(interval: .milliseconds(500),repeats: true) { _ in
+                //AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 serial.sendMessageToDevice("\(tag)")
             }
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             timer?.start()
             timer?.fire()
         }
