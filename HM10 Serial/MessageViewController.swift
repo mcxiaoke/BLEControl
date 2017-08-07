@@ -32,7 +32,6 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var mainTextView: UITextView!
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint! // used to move the textField up when the keyboard is present
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -41,59 +40,33 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
+        print("MessageViewController.viewDidLoad")
         reloadView()
         
-        // UI
+        mainTextView.layoutManager.allowsNonContiguousLayout = true
         mainTextView.text = ""
+        messageField.delegate = self
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(MessageViewController.reloadView), name: NSNotification.Name(rawValue: "reloadStartViewController"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadView), name: .BluetoothDidStateChange, object: nil)
         
-        // we want to be notified when the keyboard is shown (so we can move the textField up)
-        NotificationCenter.default.addObserver(self, selector: #selector(MessageViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(MessageViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onMessageSent(noti:)), name: .BluetoothDidSendString, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onMessageReceived(noti:)), name: .BluetoothDidReceiveString, object: nil)
         
         // to dismiss the keyboard if the user taps outside the textField while editing
         let tap = UITapGestureRecognizer(target: self, action: #selector(MessageViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        // style the bottom UIView
-        bottomView.layer.masksToBounds = false
-        bottomView.layer.shadowOffset = CGSize(width: 0, height: -1)
-        bottomView.layer.shadowRadius = 0
-        bottomView.layer.shadowOpacity = 0.5
-        bottomView.layer.shadowColor = UIColor.gray.cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    func keyboardWillShow(_ notification: Notification) {
-        // animate the text field to stay above the keyboard
-        var info = (notification as NSNotification).userInfo!
-        let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as! CGRect
-        let frame = view.convert(keyboardFrame, from: view.window)
-        
-        //TODO: Not animating properly
-        UIView.animate(withDuration: 1, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
-            self.bottomConstraint.constant = keyboardFrame.size.height
-        }, completion: { Bool -> Void in
-            self.textViewScrollToBottom()
-        })
-    }
-    
-    func keyboardWillHide(_ notification: Notification) {
-        // bring the text field back down..
-        UIView.animate(withDuration: 1, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
-            self.bottomConstraint.constant = 0
-        }, completion: nil)
-        
-    }
-    
     func reloadView() {
+        print("MessageViewController.reloadView")
         // in case we're the visible view again
         
         if serial.isReady {
@@ -151,13 +124,37 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
         return true
     }
     
+    func handleMessage(message:String){
+        // add the received text to the textView, optionally with a line break at the end
+        var newText = mainTextView.text!
+        newText += message
+        let pref = UserDefaults.standard.integer(forKey: ReceivedMessageOptionKey)
+        if pref == ReceivedMessageOption.newline.rawValue { newText += "\n" }
+        mainTextView.text = newText
+        textViewScrollToBottom()
+    }
+    
+    func onMessageSent(noti:Notification){
+        if let message = noti.userInfo?[BluetoothDidSendStringMessageKey] as? String{
+            handleMessage(message: message)
+        }
+    }
+    
+    func onMessageReceived(noti:Notification){
+        if let message = noti.userInfo?[BluetoothDidReceiveStringMessagekey] as? String{
+            handleMessage(message: message)
+        }
+    }
+    
     func dismissKeyboard() {
         messageField.resignFirstResponder()
     }
     
+    
     //MARK: IBActions
     
     @IBAction func barButtonPressed(_ sender: AnyObject) {
+        print("MessageViewController.barButtonPressed \(serial.connectedPeripheral)")
         if serial.connectedPeripheral == nil {
             performSegue(withIdentifier: "ShowScanner", sender: self)
         } else {

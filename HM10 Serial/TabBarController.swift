@@ -18,18 +18,27 @@ final class TabBarController: UITabBarController, BluetoothSerialDelegate {
         serial = BluetoothSerial(delegate: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Tab.viewWillAppear")
+//        serial.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("Tab.viewWillDisappear")
+//        serial.delegate = nil
+    }
+    
     
     //MARK: BluetoothSerialDelegate
     
     func serialDidReceiveString(_ message: String) {
-        // add the received text to the textView, optionally with a line break at the end
-        //mainTextView.text! += message
-        //let pref = UserDefaults.standard.integer(forKey: ReceivedMessageOptionKey)
-        //if pref == ReceivedMessageOption.newline.rawValue { mainTextView.text! += "\n" }
-        //textViewScrollToBottom()
+        print("Tab.serialDidReceiveString")
     }
     
     func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
+        print("Tab.serialDidDisconnect")
         //reloadView()
         //dismissKeyboard()
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
@@ -39,6 +48,7 @@ final class TabBarController: UITabBarController, BluetoothSerialDelegate {
     }
     
     func serialDidChangeState() {
+        print("Tab.serialDidChangeState")
         //reloadView()
         if serial.centralManager.state != .poweredOn {
             //dismissKeyboard()

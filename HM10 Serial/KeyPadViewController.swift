@@ -27,7 +27,7 @@ final class KeyPadViewController: UIViewController {
         print("KeyPadViewController.viewDidLoad")
         reloadView()
         setupButtons()
-        NotificationCenter.default.addObserver(self, selector: #selector(KeyPadViewController.reloadView), name: NSNotification.Name(rawValue: "reloadStartViewController"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(KeyPadViewController.reloadView), name: .BluetoothDidStateChange, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +47,7 @@ final class KeyPadViewController: UIViewController {
     }
     
     func reloadView() {
-        print("KeyPadViewController state=\(serial.centralManager.state.rawValue)")
+        print("KeyPadViewController.reloadView")
         if serial.isReady {
             navItem.title = serial.connectedPeripheral!.name
             barButton.title = "Disconnect"
@@ -91,8 +91,8 @@ final class KeyPadViewController: UIViewController {
     
     @IBAction func buttonTouchDown(_ sender: UIView){
 //        print("buttonTouchDown: \(sender.tag)")
-        if false {
-//        if serial.connectedPeripheral == nil {
+//        if false {
+        if serial.connectedPeripheral == nil {
             performSegue(withIdentifier: "ShowScanner", sender: self)
         } else {
             let tag = sender.tag
@@ -110,6 +110,7 @@ final class KeyPadViewController: UIViewController {
     }
     
     @IBAction func barButtonPressed(_ sender: AnyObject) {
+        print("KeyPadViewController.barButtonPressed \(serial.connectedPeripheral)")
         if serial.connectedPeripheral == nil {
             performSegue(withIdentifier: "ShowScanner", sender: self)
         } else {

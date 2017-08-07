@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 let MessageOptionKey = "MessageOption"
 let ReceivedMessageOptionKey = "ReceivedMessageOption"
@@ -23,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // register default user prefs
         UserDefaults.standard.register(defaults: [MessageOptionKey: MessageOption.noLineEnding.rawValue,
                                           ReceivedMessageOptionKey: ReceivedMessageOption.none.rawValue])
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
         
         return true
     }

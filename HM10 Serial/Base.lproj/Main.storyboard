@@ -467,28 +467,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvN-pu-wrl">
-                                <rect key="frame" x="16" y="72" width="343" height="484"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="16" y="72" width="343" height="492"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3e-cp-VIa">
-                                <rect key="frame" x="16" y="566" width="343" height="44"/>
+                                <rect key="frame" x="16" y="574" width="343" height="44"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1Y-Pa-hrx">
-                                        <rect key="frame" x="5" y="7" width="333" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G1Y-Pa-hrx">
+                                        <rect key="frame" x="0.0" y="7" width="343" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="8om-DD-HHs"/>
                                     <constraint firstItem="G1Y-Pa-hrx" firstAttribute="centerY" secondItem="W3e-cp-VIa" secondAttribute="centerY" id="Uka-Mv-YIO"/>
-                                    <constraint firstItem="G1Y-Pa-hrx" firstAttribute="leading" secondItem="W3e-cp-VIa" secondAttribute="leading" constant="5" id="hnV-qT-W64"/>
-                                    <constraint firstAttribute="trailing" secondItem="G1Y-Pa-hrx" secondAttribute="trailing" constant="5" id="z4k-A4-WZj"/>
+                                    <constraint firstItem="G1Y-Pa-hrx" firstAttribute="leading" secondItem="W3e-cp-VIa" secondAttribute="leading" id="hnV-qT-W64"/>
+                                    <constraint firstAttribute="trailing" secondItem="G1Y-Pa-hrx" secondAttribute="trailing" id="z4k-A4-WZj"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -499,7 +497,7 @@
                             <constraint firstItem="SvN-pu-wrl" firstAttribute="top" secondItem="Q6i-5I-uhj" secondAttribute="bottom" constant="8" symbolic="YES" id="M23-tc-f8H"/>
                             <constraint firstItem="W3e-cp-VIa" firstAttribute="top" secondItem="SvN-pu-wrl" secondAttribute="bottom" constant="10" id="WBw-PJ-fM7"/>
                             <constraint firstItem="SvN-pu-wrl" firstAttribute="leading" secondItem="HQZ-ty-qaT" secondAttribute="leadingMargin" id="X2g-VI-vZO"/>
-                            <constraint firstItem="1vZ-bn-rZ4" firstAttribute="top" secondItem="W3e-cp-VIa" secondAttribute="bottom" constant="8" symbolic="YES" id="tay-HP-nqX"/>
+                            <constraint firstItem="1vZ-bn-rZ4" firstAttribute="top" secondItem="W3e-cp-VIa" secondAttribute="bottom" id="tay-HP-nqX"/>
                             <constraint firstItem="W3e-cp-VIa" firstAttribute="leading" secondItem="HQZ-ty-qaT" secondAttribute="leadingMargin" id="zhC-9s-PwS"/>
                         </constraints>
                     </view>
@@ -518,7 +516,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="barButton" destination="iYd-q1-Y4Z" id="oj5-LR-nbE"/>
-                        <outlet property="bottomConstraint" destination="tay-HP-nqX" id="64n-e7-rgI"/>
                         <outlet property="bottomView" destination="W3e-cp-VIa" id="RGh-J1-Qma"/>
                         <outlet property="mainTextView" destination="SvN-pu-wrl" id="Egg-NC-Nuf"/>
                         <outlet property="messageField" destination="G1Y-Pa-hrx" id="S3a-8S-ORm"/>
@@ -527,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYf-ls-X3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3044" y="1757"/>
+            <point key="canvasLocation" x="3186" y="2096"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9PH-bu-qND">
@@ -573,7 +570,7 @@
         <image name="TabIconMessage" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d9L-CK-dOj"/>
-        <segue reference="DCR-Cc-yOs"/>
+        <segue reference="MXp-F6-2KD"/>
+        <segue reference="Q6w-1y-Jy2"/>
     </inferredMetricsTieBreakers>
 </document>

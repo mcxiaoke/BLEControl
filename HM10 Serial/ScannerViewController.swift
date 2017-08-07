@@ -28,6 +28,9 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
     /// Progress hud shown
     var progressHUD: MBProgressHUD?
     
+    // old bluetooth delegate
+    var restoreDelegate:BluetoothSerialDelegate?
+    
     
 //MARK: Functions
     
@@ -41,6 +44,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         tableView.tableFooterView = UIView(frame: CGRect.zero)
 
         // tell the delegate to notificate US instead of the previous view if something happens
+        restoreDelegate = serial.delegate
         serial.delegate = self
         
         if serial.centralManager.state != .poweredOn {
@@ -51,6 +55,11 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         // start scanning and schedule the time out
         serial.startScan()
         Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(ScannerViewController.scanTimeOut), userInfo: nil, repeats: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        serial.delegate = restoreDelegate 
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,7 +138,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
 //MARK: BluetoothSerialDelegate
     
     func serialDidDiscoverPeripheral(_ peripheral: CBPeripheral, RSSI: NSNumber?) {
-        print("serialDidDiscoverPeripheral: \(peripheral) \(RSSI)")
+//        print("serialDidDiscoverPeripheral: \(peripheral) \(RSSI)")
         // check whether it is a duplicate
         for exisiting in peripherals {
             if exisiting.peripheral.identifier == peripheral.identifier { return }
@@ -147,7 +156,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func serialDidFailToConnect(_ peripheral: CBPeripheral, error: NSError?) {
-        print("serialDidFailToConnect: \(peripheral) \(error)")
+//        print("serialDidFailToConnect: \(peripheral) \(error)")
         if let hud = progressHUD {
             hud.hide(false)
         }
@@ -161,7 +170,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
-        print("serialDidDisconnect: \(peripheral) \(error)")
+//        print("serialDidDisconnect: \(peripheral) \(error)")
         if let hud = progressHUD {
             hud.hide(false)
         }
@@ -185,7 +194,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func serialDidChangeState() {
-        print("serialDidChangeState:")
+//        print("serialDidChangeState:")
         if let hud = progressHUD {
             hud.hide(false)
         }
