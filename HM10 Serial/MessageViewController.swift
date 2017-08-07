@@ -42,10 +42,11 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
+        reloadView()
         
         // UI
         mainTextView.text = ""
-        reloadView()
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(MessageViewController.reloadView), name: NSNotification.Name(rawValue: "reloadStartViewController"), object: nil)
         
@@ -64,6 +65,10 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
         bottomView.layer.shadowRadius = 0
         bottomView.layer.shadowOpacity = 0.5
         bottomView.layer.shadowColor = UIColor.gray.cgColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     func keyboardWillShow(_ notification: Notification) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wHB-Xw-YD8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wHB-Xw-YD8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6Z-eW-uZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956" y="651.72413793103453"/>
+            <point key="canvasLocation" x="4186" y="642"/>
         </scene>
         <!--Preferences-->
         <scene sceneID="jIU-t6-8rt">
@@ -231,7 +231,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfN-Qt-IvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4687.1999999999998" y="1386.656671664168"/>
+            <point key="canvasLocation" x="4809" y="1387"/>
         </scene>
         <!--BLE Control-->
         <scene sceneID="fbM-Ih-5Rw">
@@ -258,9 +258,6 @@
                                                 <state key="normal" title="A">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="Dvr-TS-mg1"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1t-ew-TBI" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
                                                 <rect key="frame" x="121" y="0.0" width="101" height="119.5"/>
@@ -269,9 +266,6 @@
                                                 <state key="normal" title="M">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="1ca-6i-vs0"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-fg-jWD" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
                                                 <rect key="frame" x="242" y="0.0" width="101" height="119.5"/>
@@ -280,9 +274,6 @@
                                                 <state key="normal" title="◎">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="cjI-Uo-Y3r"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -296,9 +287,6 @@
                                                 <state key="normal" title="SL">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="edc-b9-grH"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmX-dK-1eh" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
                                                 <rect key="frame" x="121" y="0.0" width="101" height="119.5"/>
@@ -307,9 +295,6 @@
                                                 <state key="normal" title="▲">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="UxJ-uI-76A"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoq-n3-4cl" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
                                                 <rect key="frame" x="242" y="0.0" width="101" height="119.5"/>
@@ -318,9 +303,6 @@
                                                 <state key="normal" title="SR">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="tT3-mF-Kws"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -334,9 +316,6 @@
                                                 <state key="normal" title="◀">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="kPB-D2-pfE"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWv-2w-spq" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
                                                 <rect key="frame" x="121" y="0.0" width="101" height="119.5"/>
@@ -345,9 +324,6 @@
                                                 <state key="normal" title="●">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="O5w-bR-qDq"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBh-No-JtS" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
                                                 <rect key="frame" x="242" y="0.0" width="101" height="119.5"/>
@@ -356,9 +332,6 @@
                                                 <state key="normal" title="▶">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="McV-Y4-c5Q"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -372,9 +345,6 @@
                                                 <state key="normal" title="NL">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="Y1J-Mh-pYh"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oU-nh-SPD" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
                                                 <rect key="frame" x="121" y="0.0" width="101" height="119.5"/>
@@ -383,9 +353,6 @@
                                                 <state key="normal" title="▼">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="Ihy-r7-38R"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofG-xS-0O0" customClass="RoundButton" customModule="Serial" customModuleProvider="target">
                                                 <rect key="frame" x="242" y="0.0" width="101" height="119.5"/>
@@ -394,9 +361,6 @@
                                                 <state key="normal" title="NR">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="padButtonPressed:" destination="EEx-bJ-XFj" eventType="touchUpInside" id="qID-68-qP9"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -433,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vau-JV-2qH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3117.5999999999999" y="1386.656671664168"/>
+            <point key="canvasLocation" x="2145" y="1387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lfg-N1-k6G">
@@ -451,7 +415,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orE-dT-wQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3948" y="1386.656671664168"/>
+            <point key="canvasLocation" x="4078" y="1387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l5Z-t8-MYl">
@@ -469,7 +433,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Or0-x7-rbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1240" y="652"/>
+            <point key="canvasLocation" x="3407" y="642"/>
         </scene>
         <!--KeyPad-->
         <scene sceneID="xTU-WO-1J0">
@@ -488,7 +452,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioI-Z6-0bX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2388" y="1386.656671664168"/>
+            <point key="canvasLocation" x="1369" y="1387"/>
         </scene>
         <!--Message-->
         <scene sceneID="cFe-Cn-eyc">
@@ -543,6 +507,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Scan" id="iYd-q1-Y4Z">
                             <connections>
                                 <action selector="barButtonPressed:" destination="Kbc-Lb-O1T" id="ZLu-iF-bD3"/>
+                                <segue destination="HTb-Lt-944" kind="presentation" identifier="ShowScanner" modalPresentationStyle="formSheet" id="d9L-CK-dOj"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Zf0-Xo-osT">
@@ -562,7 +527,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYf-ls-X3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3118" y="2097"/>
+            <point key="canvasLocation" x="3044" y="1757"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9PH-bu-qND">
@@ -608,6 +573,7 @@
         <image name="TabIconMessage" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Q6w-1y-Jy2"/>
+        <segue reference="d9L-CK-dOj"/>
+        <segue reference="DCR-Cc-yOs"/>
     </inferredMetricsTieBreakers>
 </document>

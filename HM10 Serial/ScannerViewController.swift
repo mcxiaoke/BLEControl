@@ -135,7 +135,7 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
             if exisiting.peripheral.identifier == peripheral.identifier { return }
         }
         guard let name = peripheral.name else { return }
-        if !(name.contains("Car")) {
+        if name == "(null)" {
             return
         }
         
@@ -181,7 +181,6 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
             hud.hide(false)
         }
         
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
         dismiss(animated: true, completion: nil)
     }
     
@@ -192,7 +191,6 @@ final class ScannerViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         if serial.centralManager.state != .poweredOn {
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
             dismiss(animated: true, completion: nil)
         }
     }

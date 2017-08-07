@@ -249,24 +249,42 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         
-        let status = CBPeripheralManager.authorizationStatus()
-        if (status == .notDetermined) {
-            print("notDetermined")
-        } else if (status == .authorized) {
-            print("authorized")
-        } else if (status == .denied) {
-            print("denied")
-        } else if (status == .restricted) {
-            print("restricted")
+        print("centralManagerDidUpdateState:\(central.state.rawValue)")
+        
+        switch central.state {
+        case .unknown:
+            print("State:unknown")
+        case .resetting:
+            print("State:resetting")
+        case .unauthorized:
+            print("State:unauthorized")
+        case .unsupported:
+            print("State:unsupported")
+        case .poweredOff:
+            print("State:poweredOff")
+        case .poweredOn:
+            print("State:poweredOn")
         }
         
-        print("centralManagerDidUpdateState:\(central.state.rawValue)")
+        let status = CBPeripheralManager.authorizationStatus()
+        if (status == .notDetermined) {
+            print("Status:notDetermined")
+        } else if (status == .authorized) {
+            print("Status:authorized")
+        } else if (status == .denied) {
+            print("Status:denied")
+        } else if (status == .restricted) {
+            print("Status:restricted")
+        }
+
         // note that "didDisconnectPeripheral" won't be called if BLE is turned off while connected
         connectedPeripheral = nil
         pendingPeripheral = nil
 
         // send it to the delegate
         delegate.serialDidChangeState()
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
     }
     
     
