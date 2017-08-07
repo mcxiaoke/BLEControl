@@ -14,6 +14,7 @@ final class PreferencesTableViewController: UITableViewController {
     
     var selectedMessageOption: MessageOption!
     var selectedReceivedMessageOption: ReceivedMessageOption!
+    var selectedHoldSendDelayOption:HoldSendDelayOption!
 
 
 //MARK: Functions
@@ -24,7 +25,7 @@ final class PreferencesTableViewController: UITableViewController {
         // get current prefs
         selectedMessageOption = MessageOption(rawValue: UserDefaults.standard.integer(forKey: MessageOptionKey))
         selectedReceivedMessageOption = ReceivedMessageOption(rawValue: UserDefaults.standard.integer(forKey: ReceivedMessageOptionKey))
-        
+        selectedHoldSendDelayOption = HoldSendDelayOption(rawValue: UserDefaults.standard.integer(forKey: HoldSendDelayOptionKey))
     }
 
     
@@ -67,6 +68,22 @@ final class PreferencesTableViewController: UITableViewController {
             // save it
             UserDefaults.standard.set(selectedCell, forKey: ReceivedMessageOptionKey)
 
+        } else if (indexPath as NSIndexPath).section == 2 {
+            // first, clear the old checkmark
+            tableView.cellForRow(at: IndexPath(row: 0, section: 2))?.accessoryType = .none
+            tableView.cellForRow(at: IndexPath(row: 1, section: 2))?.accessoryType = .none
+            tableView.cellForRow(at: IndexPath(row: 2, section: 2))?.accessoryType = .none
+            tableView.cellForRow(at: IndexPath(row: 3, section: 2))?.accessoryType = .none
+            
+            // get the newly selected option
+            let selectedCell = (indexPath as NSIndexPath).row
+            selectedHoldSendDelayOption = HoldSendDelayOption(rawValue: selectedCell)
+            
+            // set new checkmark
+            tableView.cellForRow(at: IndexPath(row: selectedCell, section: 1))?.accessoryType = UITableViewCellAccessoryType.checkmark
+            
+            // save it
+            UserDefaults.standard.set(selectedCell, forKey: HoldSendDelayOptionKey)
         }
         
         // deselect row
@@ -79,6 +96,8 @@ final class PreferencesTableViewController: UITableViewController {
         if (indexPath as NSIndexPath).section == 0 && (indexPath as NSIndexPath).row == selectedMessageOption.rawValue {
             cell.accessoryType = .checkmark
         } else  if (indexPath as NSIndexPath).section == 1 && (indexPath as NSIndexPath).row == selectedReceivedMessageOption.rawValue {
+            cell.accessoryType = .checkmark
+        } else  if (indexPath as NSIndexPath).section == 2 && (indexPath as NSIndexPath).row == selectedHoldSendDelayOption.rawValue {
             cell.accessoryType = .checkmark
         }
     }

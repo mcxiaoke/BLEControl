@@ -9,9 +9,6 @@
 import UIKit
 import IQKeyboardManagerSwift
 
-let MessageOptionKey = "MessageOption"
-let ReceivedMessageOptionKey = "ReceivedMessageOption"
-//let WriteWithResponseKey = "WriteWithResponse" No longer neccessary v1.1.2
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // register default user prefs
         UserDefaults.standard.register(defaults: [MessageOptionKey: MessageOption.noLineEnding.rawValue,
-                                          ReceivedMessageOptionKey: ReceivedMessageOption.none.rawValue])
+                                          ReceivedMessageOptionKey: ReceivedMessageOption.none.rawValue,
+                                          HoldSendDelayOptionKey:HoldSendDelayOption.t500ms.rawValue])
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         

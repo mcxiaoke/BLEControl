@@ -88,6 +88,24 @@ final class KeyPadViewController: UIViewController {
         }
     }
     
+    func getSendDelay() -> Int{
+        let pref = UserDefaults.standard.integer(forKey: HoldSendDelayOptionKey)
+        let delay:Int
+        switch pref {
+        case HoldSendDelayOption.t200ms.rawValue:
+            delay = 200
+        case HoldSendDelayOption.t500ms.rawValue:
+            delay = 500
+        case HoldSendDelayOption.t1000ms.rawValue:
+            delay = 1000
+        case HoldSendDelayOption.t2000ms.rawValue:
+            delay = 2000
+        default:
+            delay = 500
+        }
+        return delay
+    }
+    
     //MARK: IBActions
     
     @IBAction func buttonTouchDown(_ sender: UIView){
@@ -97,7 +115,7 @@ final class KeyPadViewController: UIViewController {
             performSegue(withIdentifier: "ShowScanner", sender: self)
         } else {
             let tag = sender.tag
-            timer = SwiftTimer(interval: .milliseconds(500),repeats: true) { _ in
+            timer = SwiftTimer(interval: .milliseconds(getSendDelay()),repeats: true) { _ in
                 //AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 serial.sendMessageToDevice("\(tag)")
             }

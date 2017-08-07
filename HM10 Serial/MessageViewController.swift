@@ -10,20 +10,6 @@ import UIKit
 import QuartzCore
 import CoreBluetooth
 
-/// The option to add a \n or \r or \r\n to the end of the send message
-enum MessageOption: Int {
-    case noLineEnding,
-    newline,
-    carriageReturn,
-    carriageReturnAndNewline
-}
-
-/// The option to add a \n to the end of the received message (to make it more readable)
-enum ReceivedMessageOption: Int {
-    case none,
-    newline
-}
-
 final class MessageViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var barButton: UIBarButtonItem!
