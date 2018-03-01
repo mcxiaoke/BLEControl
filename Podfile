@@ -6,10 +6,10 @@ target 'Serial' do
   use_frameworks!
 
   # Pods for Serial
-  pod 'SnapKit', '~> 3.2.0'
-  pod "SlackTextViewController", "~>1.9.5"
-  pod 'IQKeyboardManagerSwift', '4.0.10'
-  pod 'Iconic', :git => 'https://github.com/dzenbot/Iconic.git', :tag => '1.3'
+  pod 'SnapKit', '~> 4.0.0'
+  pod "SlackTextViewController", "~> 1.9.6"
+  pod 'IQKeyboardManagerSwift', '~> 5.0.7'
+  pod 'Iconic', :git => 'https://github.com/zvving/Iconic.git', :branch => 'pod_config'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
 end

@@ -251,7 +251,7 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
     }
 
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        print("didDisconnectPeripheral:\(peripheral) \(error)")
+        print("didDisconnectPeripheral:\(peripheral) \(String(describing: error))")
         connectedPeripheral = nil
         pendingPeripheral = nil
 
@@ -261,7 +261,7 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        print("didFailToConnect:\(peripheral) \(error)")
+        print("didFailToConnect:\(peripheral) \(String(describing: error))")
         pendingPeripheral = nil
 
         // just send it to the delegate
@@ -312,7 +312,7 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
     // MARK: CBPeripheralDelegate functions
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        print("didDiscoverServices: \(peripheral.services) \(error)")
+        print("didDiscoverServices: \(String(describing: peripheral.services)) \(String(describing: error))")
         // discover the 0xFFE1 characteristic for all services (though there should only be one)
         for service in peripheral.services! {
             print("didDiscoverServices: service:\(service)")
@@ -321,7 +321,7 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        print("didDiscoverCharacteristicsFor:\(service) \(error)")
+        print("didDiscoverCharacteristicsFor:\(service) \(String(describing: error))")
         // check whether the characteristic we're looking for (0xFFE1) is present - just to be sure
         for characteristic in service.characteristics! {
             print("didDiscoverCharacteristicsFor: characteristic:\(characteristic)")
@@ -339,7 +339,7 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
                 // notify the delegate we're ready for communication
                 delegate.serialIsReady(peripheral)
                 
-                print("isReady:\(connectedPeripheral)")
+                print("isReady:\(String(describing: connectedPeripheral))")
                 
                 NotificationCenter.default.post(name: .BluetoothDidStateChange, object: self)
             }
@@ -405,7 +405,7 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
     }
     
     func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
-        print("didReadRSSI:\(RSSI) \(error)")
+        print("didReadRSSI:\(RSSI) \(String(describing: error))")
         delegate.serialDidReadRSSI(RSSI)
     }
     

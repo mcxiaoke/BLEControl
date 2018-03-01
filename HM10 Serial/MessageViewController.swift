@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 import CoreBluetooth
 
-class MessageItem: AnyObject {
+class MessageItem: Any {
     let raw:Data
     let text:String
     let hex:String
@@ -68,7 +68,7 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
         super.viewWillAppear(animated)
     }
     
-    func reloadView() {
+    @objc func reloadView() {
         print("MessageViewController.reloadView")
         // in case we're the visible view again
         
@@ -137,19 +137,19 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
         scrollToBottom()
     }
     
-    func onMessageSent(noti:Notification){
+    @objc func onMessageSent(noti:Notification){
         if let data = noti.userInfo?[BluetoothDidSendDataMessageKey] as? Data{
             handleMessage(data)
         }
     }
     
-    func onMessageReceived(noti:Notification){
+    @objc func onMessageReceived(noti:Notification){
         if let data = noti.userInfo?[BluetoothDidReceiveDataMessageKey] as? Data{
             handleMessage(data)
         }
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         messageField.resignFirstResponder()
     }
     
@@ -157,7 +157,7 @@ final class MessageViewController: UIViewController, UITextFieldDelegate{
     //MARK: IBActions
     
     @IBAction func barButtonPressed(_ sender: AnyObject) {
-        print("MessageViewController.barButtonPressed \(serial.connectedPeripheral)")
+        print("MessageViewController.barButtonPressed \(String(describing: serial.connectedPeripheral))")
         if serial.connectedPeripheral == nil {
             performSegue(withIdentifier: "ShowScanner", sender: self)
         } else {

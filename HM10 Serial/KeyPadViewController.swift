@@ -47,7 +47,7 @@ final class KeyPadViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func reloadView() {
+    @objc func reloadView() {
         print("KeyPadViewController.reloadView")
         if serial.isReady {
             navItem.title = serial.connectedPeripheral!.name
@@ -131,7 +131,7 @@ final class KeyPadViewController: UIViewController {
     }
     
     @IBAction func barButtonPressed(_ sender: AnyObject) {
-        print("KeyPadViewController.barButtonPressed \(serial.connectedPeripheral)")
+        print("KeyPadViewController.barButtonPressed \(String(describing: serial.connectedPeripheral))")
         if serial.connectedPeripheral == nil {
             performSegue(withIdentifier: "ShowScanner", sender: self)
         } else {
